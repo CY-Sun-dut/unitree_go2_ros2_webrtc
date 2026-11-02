@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>go2_webrtc_test</name>
+  <version>1.0.0</version>
+  <description>Test programs for go2_webrtc_ros2: keyboard teleop and a menu-driven command console.</description>
+  <maintainer email="user@todo.todo">go2-webrtc-ros</maintainer>
+  <license>MIT</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>geometry_msgs</depend>
+  <exec_depend>go2_webrtc_ros2</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

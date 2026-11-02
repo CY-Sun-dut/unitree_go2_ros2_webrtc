@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>go2_webrtc_ros2</name>
+  <version>2.0.0</version>
+  <description>
+    Unitree GO2 single-node ROS2 interface over one WebRTC connection
+    (unitree_webrtc_connect): publishes sensor data as standard messages
+    (PointCloud2, LaserScan, Imu, Image/CompressedImage, Odometry,
+    JointState, BatteryState) and accepts motion control via standard
+    topics (Twist velocity, String state/gait commands).
+  </description>
+  <maintainer email="user@todo.todo">go2-webrtc-ros</maintainer>
+  <license>MIT</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2_ros</depend>
+
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
