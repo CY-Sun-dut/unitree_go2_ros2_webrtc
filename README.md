@@ -29,6 +29,7 @@ rviz2 / slam_toolbox / Nav2 等生态工具。
 
 - [ ] **二维导航** —— 基于 Nav2 的定位与路径规划：全局/局部规划、动态避障、目标点导航
 - [ ] **三维 SLAM 建图** —— 基于雷达点云的三维建图、地图管理与可视化
+- [ ] **键盘操作** —— 键盘遥控工具（手动控制机器狗移动、指令交互），待实测后合入
 
 ---
 
@@ -38,7 +39,6 @@ rviz2 / slam_toolbox / Nav2 等生态工具。
 |---|---|---|
 | [`go2_webrtc_ros2`](src/go2_webrtc_ros2/README.md) | 机器狗通信接口单节点 `go2_node`：数据读取 + 运动控制，全部标准消息 | [README](src/go2_webrtc_ros2/README.md) |
 | [`go2_slam_toolbox`](src/go2_slam_toolbox/README.md) | slam_toolbox 二维建图封装：新建图/继续建图/定位，自动 rviz | [README](src/go2_slam_toolbox/README.md) |
-| [`go2_webrtc_test`](src/go2_webrtc_test/README.md) | 测试工具：键盘遥控、指令控制台 | [README](src/go2_webrtc_test/README.md) |
 
 **go2_webrtc_ros2 接口速查**（详细说明见 [包 README](src/go2_webrtc_ros2/README.md)）：
 
@@ -59,12 +59,11 @@ ros2_ws/
 │   ├── go2_webrtc_ros2/          通信接口单节点（数据读取 + 运动控制）
 │   │   ├── go2_webrtc_ros2/      节点源码（连接/转换/接口）
 │   │   └── rviz/go2.rviz         rviz 预置配置
-│   ├── go2_slam_toolbox/         slam_toolbox 建图/定位封装
-│   │   ├── go2_slam_toolbox/     适配层（话题转播 + 续建流程）
-│   │   ├── config/               slam_toolbox 参数（建图/定位）
-│   │   ├── launch/               一键启动（含自动 rviz）
-│   │   └── rviz/go2_slam.rviz    建图可视化配置
-│   └── go2_webrtc_test/          遥控/指令测试工具
+│   └── go2_slam_toolbox/         slam_toolbox 建图/定位封装
+│       ├── go2_slam_toolbox/     适配层（话题转播 + 续建流程）
+│       ├── config/               slam_toolbox 参数（建图/定位）
+│       ├── launch/               一键启动（含自动 rviz）
+│       └── rviz/go2_slam.rviz    建图可视化配置
 ├── README.md
 └── LICENSE
 ```
