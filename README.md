@@ -108,25 +108,53 @@ ros2 run go2_webrtc_ros2 go2_node --ros-args -p aes_key:=<32位hex>
 
 ## 快速开始
 
+### ① 新建工作空间并克隆仓库
+
 ```bash
-# 1) 获取与构建
+# 新建工作空间文件夹
+mkdir -p ~/ros2_ws
+
+# 克隆仓库（仓库根即工作空间，ROS2 包位于 src/ 下）
+git clone https://github.com/<用户名>/go2_ros2_ws.git ~/ros2_ws
+# SSH 方式：git clone git@github.com:<用户名>/go2_ros2_ws.git ~/ros2_ws
+```
+
+> 如果 `~/ros2_ws` 已有其他包：把仓库内容并入即可（保持 `src/<包名>` 结构）。
+
+### ② 安装依赖
+
+```bash
+sudo apt install ros-humble-slam-toolbox ros-humble-navigation2
+pip install unitree_webrtc_connect        # GO2 WebRTC SDK（详见「依赖」章节）
+```
+
+### ③ 编译工作空间
+
+```bash
 cd ~/ros2_ws
 source /opt/ros/humble/setup.bash
 colcon build
 source install/setup.bash
+# 建议把上面两行 source 写入 ~/.bashrc，免去每次手动执行
+```
 
-# 2) 连接机器狗（与狗同一局域网；默认 IP 192.168.123.161）
+> 更新代码：`cd ~/ros2_ws && git pull && colcon build`（增量编译，只重建改动的包）。
+
+### ④ 运行
+
+```bash
+# 连接机器狗（与狗同一局域网；默认 IP 192.168.123.161）
 ros2 run go2_webrtc_ros2 go2_node --ros-args -p robot_ip:=192.168.123.161
 
-# 3) 另开终端：查看数据
+# 另开终端：查看数据
 ros2 topic echo /go2/imu
 ros2 topic hz /go2/lidar/points
 
-# 4) 移动控制（持续发布；停止发布 0.5s 自动停车）
+# 移动控制（持续发布；停止发布 0.5s 自动停车）
 ros2 topic pub -r 20 /go2/cmd/vel geometry_msgs/Twist "{linear: {x: 0.3}}"
 ros2 topic pub --once /go2/cmd/state std_msgs/String "{data: stand_up}"
 
-# 5) 建图（自动启动 rviz：激光红点/地图/姿态）
+# 建图（自动启动 rviz：激光红点/地图/姿态）
 ros2 launch go2_slam_toolbox go2_slam_toolbox.launch.py mode:=new
 ```
 
