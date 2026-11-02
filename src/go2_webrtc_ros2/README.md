@@ -441,7 +441,7 @@ public:
         RCLCPP_INFO(get_logger(), "result: %s", msg->data.c_str());
       });
 
-    // ── 控制：发布话题（与真机/仿真接口一致）───────────────────
+    // ── 控制：发布话题 ────────────────────────────────────
     vel_pub_ = create_publisher<geometry_msgs::msg::Twist>("/go2/cmd/vel", 10);
     state_pub_ = create_publisher<std_msgs::msg::String>("/go2/cmd/state", 10);
     gait_pub_ = create_publisher<std_msgs::msg::String>("/go2/cmd/gait", 10);
@@ -508,7 +508,7 @@ source /opt/ros/humble/setup.bash
 colcon build --packages-select go2_client_example
 source install/setup.bash
 
-# 终端1：go2_node（或 go2_sim 仿真）
+# 终端1：go2_node（数据 + 控制接口）
 ros2 run go2_webrtc_ros2 go2_node --ros-args -p robot_ip:=192.168.123.161
 # 终端2：本示例
 ros2 run go2_client_example go2_client_example

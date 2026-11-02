@@ -1,7 +1,7 @@
 # GO2 ROS2 工作空间
 
 Unitree GO2 机器狗的 ROS2 Humble 软件集合：WebRTC 通信接口、slam_toolbox 建图/定位、
-测试工具与可视化仿真，全部使用标准 ROS 消息，可直接对接 rviz2 / SLAM / Nav2。
+测试工具，全部使用标准 ROS 消息，可直接对接 rviz2 / SLAM / Nav2。
 
 ## 包一览
 
@@ -10,9 +10,6 @@ Unitree GO2 机器狗的 ROS2 Humble 软件集合：WebRTC 通信接口、slam_t
 | [`go2_webrtc_ros2`](src/go2_webrtc_ros2/README.md) | 机器狗通信接口单节点（数据读取 + 运动控制，标准消息） | [README](src/go2_webrtc_ros2/README.md) |
 | [`go2_slam_toolbox`](src/go2_slam_toolbox/README.md) | slam_toolbox 建图封装（新建图/继续建图/定位，自动 rviz） | [README](src/go2_slam_toolbox/README.md) |
 | [`go2_webrtc_test`](src/go2_webrtc_test/README.md) | 遥控/指令测试工具（键盘遥控、指令台） | [README](src/go2_webrtc_test/README.md) |
-
-> 可视化仿真平台 `go2_sim`（与 `go2_node` 接口一致，不接真机即可测试整套链路）
-> 独立维护，需要时可放入 `src/` 一并构建。
 
 ## 依赖
 
