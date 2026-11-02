@@ -115,8 +115,8 @@ ros2 run go2_webrtc_ros2 go2_node --ros-args -p aes_key:=<32位hex>
 mkdir -p ~/ros2_ws
 
 # 克隆仓库（仓库根即工作空间，ROS2 包位于 src/ 下）
-git clone https://github.com/<用户名>/go2_ros2_ws.git ~/ros2_ws
-# SSH 方式：git clone git@github.com:<用户名>/go2_ros2_ws.git ~/ros2_ws
+git clone https://github.com/CY-Sun-dut/unitree_go2_ros2_webrtc.git ~/ros2_ws
+# SSH 方式：git clone git@github.com:CY-Sun-dut/unitree_go2_ros2_webrtc.git ~/ros2_ws
 ```
 
 > 如果 `~/ros2_ws` 已有其他包：把仓库内容并入即可（保持 `src/<包名>` 结构）。
